@@ -106,7 +106,7 @@ if (!isset($_SESSION['usuario'])) {
                             </li>
 
                             <li class="nav-item align-self-center">
-                                <a class="nav-link active text-white d-flex justify-content-end" aria-current="page" href="index.html">Salir</a>
+                                <a class="nav-link active text-white d-flex justify-content-end" aria-current="page" href="index.php">Cerrar sesión</a>
                             </li>
                         
                         </ul>
