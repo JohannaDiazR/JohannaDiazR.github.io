@@ -5,17 +5,6 @@
     $clave = $_POST['password'];
 
     $_SESSION['usuario']=$usuario;
-
-    if (!preg_match('/^(\w*\d+|\w*)(@)(gmail|yahoo|hotmail|outlook)(\.)(com\.co|com)$/', $usuario)){
-        // El "correo" es incorrecto
-    }
-
-    if (!preg_match('/[A-Z]{1}[A-Za-z0-9\W]{8,12}/', $clave)){
-        // La "clave" es incorrecta
-    }
-    
-	
-    
     
     $consulta = "SELECT fkidRol FROM tbl_usuarios WHERE usuario='$usuario' AND contraseña = '$clave';";
     $resultado = mysqli_query($conn, $consulta);
