@@ -7,6 +7,8 @@ if (!isset($_SESSION['usuario'])) {
     <?php include ("../model/conexion.php");
     echo '<h3> Puede ver la información de las novedades</h3>';
     echo '<h3> si desea descargar el informe en excel, de clic en el boton GENERAR.</h3>';	
+    echo '<table><tr><td><form action="../view/informe1Novedades.php" method="post">
+            <input type="submit" value="GENERAR"></form></table>';   
     $consulta = "SELECT * FROM tbl_novedades";
     $resultado = mysqli_query($conn, $consulta);
     $filas=mysqli_num_rows($resultado);
@@ -26,8 +28,6 @@ if (!isset($_SESSION['usuario'])) {
         
     }
     echo '</table>';
-    echo '<table><tr><td><form action="../view/informe1Novedades.php" method="post">
-            <input type="submit" value="GENERAR"></form></table>';   
 
     ?>
 <?php
