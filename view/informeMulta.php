@@ -6,7 +6,7 @@ if (!isset($_SESSION['usuario'])) {
 }else { ?>
     <?php include ("../model/conexion.php");
     echo '<h3> Puede ver la información de las multas</h3>';
-    echo '<h3> si desea descargar el informe en excel, de clic en el boton GENERAR_XLS.</h3>';	
+    echo '<h3> si desea descargar el informe en excel, de clic en el boton GENERAR</h3>';	
     $consulta = "call proc_multa()";
     $resultado = mysqli_query($conn, $consulta);
     $filas=mysqli_num_rows($resultado);
