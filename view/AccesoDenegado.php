@@ -21,11 +21,20 @@
         <link rel="stylesheet" type="text/css" href="../view/1. CSS/1. Johanna.css">
             <!-- Hoja de Estilo CSS -->
         
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+            <link rel="shortcout icon" href="0. Imagenes/0. Logos/3. logo sin  nombre blanco.png">
+            <link rel="stylesheet" type="text/css" href="1. CSS/2. Modulos.css">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+            <link rel="stylesheet" type="text/css" href="1. CSS/2. Modulos.css">
+
+            <script src="https://code.jquery.com/jquery-3.5.1.js" defer></script>
+            <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js" defer></script>
+            <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js" defer></script>
+            <script src="2. JavaScript/modulos.js" defer></script>
+
             <!-- Google fonts nos permite usar caligrafias open source -->
 
     </head>
