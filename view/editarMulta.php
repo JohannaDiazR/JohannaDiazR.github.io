@@ -59,8 +59,19 @@ if (!isset($_SESSION['usuario'])) {
                                                 <!-- Tipo de Multa -->
 
                                                 <label for="tipoMulta" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Tipo de multa</label>
-                                                <input type="text" name="tipoMulta" value="<?=$datos->tipoMulta ?>"><br>
-                                                
+                                                <select name="tipoMulta" class="form-select" aria-label="Tipo de multa" required>
+                                                    <option value="Mascota sin correa" <?php if ($datos->tipoMulta === 'Mascota sin correa') echo 'selected'; ?>>Mascota sin correa</option>
+                                                    <option value="Ruido Excesivo" <?php if ($datos->tipoMulta === 'Ruido Excesivo') echo 'selected'; ?>>Ruido Excesivo</option>
+                                                    <option value="No recoger excrementos" <?php if ($datos->tipoMulta === 'No recoger excrementos') echo 'selected'; ?>>No recoger excrementos</option>
+                                                    <option value="Estacionamiento indebido" <?php if ($datos->tipoMulta === 'Estacionamiento indebido') echo 'selected'; ?>>Estacionamiento indebido</option>
+                                                    <option value="Uso indebido de áreas comunes" <?php if ($datos->tipoMulta === 'Uso indebido de áreas comunes') echo 'selected'; ?>>Uso indebido de áreas comunes</option>
+                                                    <option value="Exceso de velocidad" <?php if ($datos->tipoMulta === 'Exceso de velocidad') echo 'selected'; ?>>Exceso de velocidad</option>
+                                                    <option value="Inasistencia a reunión" <?php if ($datos->tipoMulta === 'Inasistencia a reunión') echo 'selected'; ?>>Inasistencia a reunión</option>
+                                                    <option value="Discusión con vecino" <?php if ($datos->tipoMulta === 'Discusión con vecino') echo 'selected'; ?>>Discusión con vecino</option>
+                                                    <option value="Mascota sin bozal" <?php if ($datos->tipoMulta === 'Mascota sin bozal') echo 'selected'; ?>>Mascota sin bozal</option>
+                                                    <option value="Golpe a vehículo" <?php if ($datos->tipoMulta === 'Golpe a vehículo') echo 'selected'; ?>>Golpe a vehículo</option>
+                                                </select>
+
                                                 <!-- Fecha Multa -->
 
                                                 <label for="fechaMultaPago" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C" >Fecha de multa</label>

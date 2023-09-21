@@ -49,59 +49,98 @@ if (!isset($_SESSION['usuario'])) {
 
                     
                         <?php
-                            include ("../controller/editarNovedad1.php");
-                            while ($datos=$sql->fetch_object()){?>
-                                                <input type="hidden" name="id" value="<?=$_GET["pkidNovedades"] ?>"> 
-                                                <label for="remitenteNovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C">Nombre Remitente</label>
-                                                <input type="text" class="form-control" name="remNovedades" aria-describedby="Remitente" maxlength="15" placeholder="Nombre" value="<?=$datos-> remNovedades  ?>">
-                                                <!-- Tipo novedad -->
+                        include ("../controller/editarNovedad1.php");
 
-                                                <label for="tipoNovedad1" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Tipo de Novedad</label>
-                                                <input type="text" name="TipoNovedad" value="<?=$datos->TipoNovedad ?>"><br>
-                                                                        
-                                                <!-- Asunto de Novedad -->
+                        // Obtén el registro a editar
+                        if(isset($_GET["pkidNovedades"])) {
+                            $pkidNovedades = $_GET["pkidNovedades"];
+                            $sql = $conn->query("SELECT * FROM tbl_novedades WHERE pkidNovedades = $pkidNovedades");
+                            $datos = $sql->fetch_object();
+                        }
+                        ?>
 
-                                                <label for="asuntonovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C" >Asunto Novedad</label>
-                                                <input type="text" class="form-control" name="asuntoNovedades" aria-label="Asunto" value="<?=$datos->asuntoNovedades ?>">
+                            <form method="post" action="tu_script_de_actualizacion.php">
+                            <input type="hidden" name="id" value="<?php echo $datos->pkidNovedades; ?>">
 
-                                                <!-- Descripción -->
+                            <label for="remitenteNovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C">Nombre Remitente</label>
+                            <input type="text" class="form-control" name="remNovedades" aria-describedby="Remitente" maxlength="15" placeholder="Nombre" value="<?php echo $datos->remNovedades; ?>">
 
+                            <!-- Tipo novedad -->
 
-                                                <label for="descripcionNovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C" >Descripción novedad</label>
-                                                <div class="form-floating">
-                                                    <textarea class="form-control" placeholder="Leave a comment here" name="descNovedades" style="height: 100px" maxlength="180" value=" <?=$datos-> descNovedades  ?>"></textarea>
-                                                    <label for="descripcionNovedad" style="font-size: 13px;">Razon</label>
-                                                </div>
-
-                                        
-                                                <!-- Documento Novedad -->
-
-                                                
-                                                <label for="documentoNovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C;" >Documento Novedad</label>
-                                                <input type="file" class="form-control" name="docNovedades" value="<?=$datos->docNovedades?>"><br>
-
-                                                <!-- Fecha Evidencia -->
-
-                                                <label for="fechaNovedades" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C;" >Fecha Novedad</label>
-                                                <input type="date" class="form-control" name="fecNovedades" aria-describedby="fecha_de_asignacion_Novedad" value="<?=$datos->fecNovedades?>">
+                            <label for="tipoNovedad1" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Tipo de Novedad</label>
+                            <select name="TipoNovedad" class="form-select" aria-label="Tipo de novedad">
+                                <option value="Vigilante" <?php if ($datos->TipoNovedad === 'Vigilante') echo 'selected'; ?>>Vigilante</option>
+                                <option value="Residente" <?php if ($datos->TipoNovedad === 'Residente') echo 'selected'; ?>>Residente</option>
+                                <option value="Todero" <?php if ($datos->TipoNovedad === 'Todero') echo 'selected'; ?>>Todero</option>
+                                <option value="Administrador" <?php if ($datos->TipoNovedad === 'Administrador') echo 'selected'; ?>>Administrador</option>
+                            </select>
                             
-                                                <!-- Respuesta novedad -->
+                            <!-- Asunto de Novedad -->
 
-                                                <label for="respuestanovedad"  style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Respuesta Novedad</label>
-                                                <input type="text" name="resNovedades" value="<?=$datos->resNovedades ?>"><br>
+                            <!-- Asunto de Novedad -->
 
-                                                <!-- Estado novedad -->
+                            <label for="asuntonovedad" class="form-label" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Asunto Novedad</label>
+                            <select name="asuntoNovedades" class="form-select" aria-label="Asunto">
+                                <option value="Solicitud Inmueble" <?php if ($datos->asuntoNovedades === 'Solicitud Inmueble') echo 'selected'; ?>>Solicitud permiso laboral</option>
+                                <option value="Solicitud zonas comunes" <?php if ($datos->asuntoNovedades === 'Solicitud zonas comunes') echo 'selected'; ?>>Solicitud zonas comunes</option>
+                                <option value="Solicitud camaras de seguridad" <?php if ($datos->asuntoNovedades === 'Solicitud camaras de seguridad') echo 'selected'; ?>>Solicitud camaras de seguridad</option>
+                                <option value="Solicitud reunión con administrador" <?php if ($datos->asuntoNovedades === 'Solicitud reunión con administrador') echo 'selected'; ?>>Solicitud reunión con administrador</option>
+                                <option value="Solicitud reunión con vecino" <?php if ($datos->asuntoNovedades === 'Solicitud reunión con vecino') echo 'selected'; ?>>Solicitud reunión con vecino</option>
+                            </select>
 
-                                                <label for="estadoNovedad" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Estado Novedad</label>
-                                                <input type="text" name="estNovedades" value="<?=$datos->estNovedades ?>"><br>
-            
-                            <?php }
-                            ?>
-                        
 
-                        <button type="submit" class="btn btn-primary mb-3" style="margin-top: 30px; background-color: #0d0d0d; color: #f2ebdc; border: 1px solid rgba(0,0,0,0.15);" name="Actualizar">Actualizar Novedad </button>
+                            <!-- Descripción -->
 
-                    </form>
+                            <label for="descripcionNovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C" >Descripción novedad</label>
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Leave a comment here" name="descNovedades" style="height: 100px" maxlength="180"><?php echo $datos->descNovedades; ?></textarea>
+                                <label for="descripcionNovedad" style="font-size: 13px;">Razon</label>
+                            </div>
+
+                            <!-- Documento Novedad -->
+
+                            <label for="documentoNovedad" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C;" >Documento Novedad</label>
+                            <input type="file" class="form-control" name="docNovedades"><br>
+
+                            <!-- Fecha Evidencia -->
+
+                            <label for="fechaNovedades" class="form-label" style="margin-top: 15px; margin-bottom: 15px; font-weight: 700; color:#23518C;" >Fecha Novedad</label>
+                            <input type="date" class="form-control" name="fecNovedades" aria-describedby="fecha_de_asignacion_Novedad" value="<?php echo $datos->fecNovedades; ?>">
+ 
+                            <!-- Respuesta Novedad -->
+
+                            <label for="respuestanovedad" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Respuesta Novedad</label>
+                            <select name="resNovedades" class="form-select" aria-label="Respuesta Novedad">
+                                <option value="Revisar cronograma" <?php if ($datos->resNovedades === 'Revisar cronograma') echo 'selected'; ?>>Revisar cronograma</option>
+                                <option value="verificar estado zona" <?php if ($datos->resNovedades === 'verificar estado zona') echo 'selected'; ?>>verificar estado zona</option>
+                                <option value="conciliacion con vecinos" <?php if ($datos->resNovedades === 'conciliacion con vecinos') echo 'selected'; ?>>conciliación con vecinos</option>
+                                <option value="Revision turnos" <?php if ($datos->resNovedades === 'Revision turnos') echo 'selected'; ?>>Revision turnos</option>
+                                <option value="citar vecinos" <?php if ($datos->resNovedades === 'citar vecinos') echo 'selected'; ?>>citar vecinos</option>
+                                <option value="programar reunion" <?php if ($datos->resNovedades === 'programar reunion') echo 'selected'; ?>>programar reunion</option>
+                                <option value="programar revision camaras" <?php if ($datos->resNovedades === 'programar revision camaras') echo 'selected'; ?>>programar revision camaras</option>
+                                <option value="Convocar reunion anden" <?php if ($datos->resNovedades === 'Convocar reunion anden') echo 'selected'; ?>>Convocar reunion anden</option>
+                                <option value="dialogar con vecino" <?php if ($datos->resNovedades === 'dialogar con vecino') echo 'selected'; ?>>dialogar con vecino</option>
+
+                            </select>
+                            
+                           <!-- Estado novedad -->
+
+                            <label for="estadoNovedad" style="margin-top: 15px; margin-bottom: 10px; font-weight: 700; color:#23518C">Estado Novedad</label>
+                            <select name="estNovedades" class="form-select" aria-label="Estado Novedad">
+                                <option value="Espera" <?php if ($datos->estNovedades === 'Espera') echo 'selected'; ?>>Espera</option>
+                                <option value="Solicitud Atendida" <?php if ($datos->estNovedades === 'Solicitud Atendida') echo 'selected'; ?>>Solicitud Atendida</option>
+                                <option value="Solicitud No atendida" <?php if ($datos->estNovedades === 'Solicitud No atendida') echo 'selected'; ?>>Solicitud No atendida</option>
+                            
+                            </select>
+
+                            <button type="submit" class="btn btn-primary mb-3" style="margin-top: 30px; background-color: #0d0d0d; color: #f2ebdc; border: 1px solid rgba(0,0,0,0.15);" name="Actualizar">Actualizar Novedad </button>
+                        </form>
+                     
+
+
+
+
+
 
                     
             
