@@ -288,7 +288,7 @@ if (!isset($_SESSION['usuario'])) {
                                             <tr>
                                                 <th scope="col"># Anden</th>
                                                 <th scope="col">Cantidad visitantes</th>
-                                                <th scope="col">Casa más visitada</th>
+                                                <th scope="col">Casa mas visitada</th>
                                             </tr>
 
                                         </thead>
@@ -334,7 +334,7 @@ if (!isset($_SESSION['usuario'])) {
                                 </div>
 
                                 <hr style="margin-top: 30px;">
-                                <h5 style="color: #23518C; margin-bottom: 30px;">Número de visitantes recibidos en la semana <i class="bi bi-calendar-day-fill" style="font-size: 30px;"></i></h5>
+                                <h5 style="color: #23518C; margin-bottom: 30px;">Numero de visitantes resibidos en la semana <i class="bi bi-calendar-day-fill" style="font-size: 30px;"></i></h5>
                                 <div>
 
                                     <canvas id="multasDashNumeroVisitantes" style="margin-bottom: 20px;"></canvas>
