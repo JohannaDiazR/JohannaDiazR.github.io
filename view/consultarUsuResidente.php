@@ -59,9 +59,9 @@ if (!isset($_SESSION['usuario'])) {
 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="usuriosCreacion.html">Crear Usurario</a></li>
-                                    <li><a class="dropdown-item" href="consultarUsu.html">Consultar Usuario</a></li>
-                                    <li><a class="dropdown-item" href="consultarInmueble.html">Consultar Inmueble</a></li>
+                                    <li><a class="dropdown-item" href="usuriosCreacion.php">Crear Usurario</a></li>
+                                    <li><a class="dropdown-item" href="consultarUsu.php">Consultar Usuario</a></li>
+                                    <li><a class="dropdown-item" href="consultarInmueble.php">Consultar Inmueble</a></li>
 
 
                                 </ul>
@@ -143,7 +143,7 @@ if (!isset($_SESSION['usuario'])) {
                             <td>30</td>
                             <td>1015439181</td>
                             <td>joha@gmail.com</td>
-                            <td><a href="usuarioPerfil.html" style="background-color: #23518C; text-decoration: none; color:#f2ebdc; padding: 10px; border-radius: 10px; margin:5px;">consultar</a></td>
+                            <td><a href="usuarioPerfil.php" style="background-color: #23518C; text-decoration: none; color:#f2ebdc; padding: 10px; border-radius: 10px; margin:5px;">consultar</a></td>
                         </tr>
                         <tr>
                             <td>Juan Esteban Cajiao Madero</td>
@@ -152,7 +152,7 @@ if (!isset($_SESSION['usuario'])) {
                             <td>29</td>
                             <td>11555879545</td>
                             <td>juanes@gmail.com</td>
-                            <td><a href="usuarioPerfil.html" style="background-color: #23518C; text-decoration: none; color:#f2ebdc; padding: 10px; border-radius: 10px; margin:5px;">consultar</a></td>
+                            <td><a href="usuarioPerfil.php" style="background-color: #23518C; text-decoration: none; color:#f2ebdc; padding: 10px; border-radius: 10px; margin:5px;">consultar</a></td>
                         </tr>
                         <tr>
                             <td>David Santiago Olaya</td>
@@ -161,7 +161,7 @@ if (!isset($_SESSION['usuario'])) {
                             <td>18</td>
                             <td>5697871213</td>
                             <td>david@gmail.com</td>
-                            <td><a href="usuarioPerfil.html" style="background-color: #23518C; text-decoration: none; color:#f2ebdc; padding: 10px; border-radius: 10px; margin:5px;">consultar</a></td>
+                            <td><a href="usuarioPerfil.php" style="background-color: #23518C; text-decoration: none; color:#f2ebdc; padding: 10px; border-radius: 10px; margin:5px;">consultar</a></td>
                         </tr>
             
                     </tbody>

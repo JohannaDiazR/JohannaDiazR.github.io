@@ -59,9 +59,9 @@ if (!isset($_SESSION['usuario'])) {
 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="usuriosCreacion.html">Crear Usurario</a></li>
-                                    <li><a class="dropdown-item" href="consultarUsu.html">Consultar Usuario</a></li>
-                                    <li><a class="dropdown-item" href="consultarInmueble.html">Consultar Inmueble</a></li>
+                                    <li><a class="dropdown-item" href="usuriosCreacion.php">Crear Usurario</a></li>
+                                    <li><a class="dropdown-item" href="consultarUsu.php">Consultar Usuario</a></li>
+                                    <li><a class="dropdown-item" href="consultarInmueble.php">Consultar Inmueble</a></li>
 
 
                                 </ul>
@@ -142,7 +142,7 @@ if (!isset($_SESSION['usuario'])) {
                             
                             <ul class="list-group list-group-flush">
                             
-                                <a href="consultarUsuResidente.html" style="text-decoration: none; color: #ffffff; background-color:#45b373; border-radius: 3px; padding:10px; text-align: center;">Consultar</a>
+                                <a href="consultarUsuResidente.php" style="text-decoration: none; color: #ffffff; background-color:#45b373; border-radius: 3px; padding:10px; text-align: center;">Consultar</a>
                             
                             </ul>
                         
@@ -166,7 +166,7 @@ if (!isset($_SESSION['usuario'])) {
                             
                             <ul class="list-group list-group-flush">
                             
-                                <a href="consultarUsuTrabajador.html" style="text-decoration: none; color: #ffffff; background-color:#b37a45; border-radius: 3px; padding:10px; text-align: center;">Consultar</a>
+                                <a href="consultarUsuTrabajador.php" style="text-decoration: none; color: #ffffff; background-color:#b37a45; border-radius: 3px; padding:10px; text-align: center;">Consultar</a>
                             
                             </ul>
                         
