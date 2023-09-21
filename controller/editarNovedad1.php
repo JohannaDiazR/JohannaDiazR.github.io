@@ -20,7 +20,7 @@ include ("../model/conexion.php");
         docNovedades = '$docNovedades', fecNovedades = '$fecNovedades', resNovedades = '$resNovedades', estNovedades = '$estNovedades' WHERE pkidNovedades = $id");
 
        if($sql == 1){
-           header ("location:../view/novedadesResidentes.php");
+           header ("location:../view/novedades.php");
        }else {
            echo "<div class = 'alert alert-danger'>Error al modificar </div>";
        }

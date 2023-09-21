@@ -8,11 +8,10 @@ if (isset($_POST['Registrarnovedad'])){
     $Descripcion = $_POST['descNovedades'];
     $Documento = $_POST['docNovedades'];
     $Fecha = $_POST['fecNovedades'];
-    $Respuesta = $_POST['resNovedades'];
-    $Estado = $_POST['estNovedades'];
+ 
     
 
-    $sql = "INSERT INTO tbl_novedades (pkidNovedades, remNovedades, TipoNovedad, asuntoNovedades, descNovedades, docNovedades, fecNovedades, resNovedades, estNovedades, fkidTrabajador) VALUES (null, '$Remitente', '$tipoNovedad', '$Asunto', '$Descripcion', '$Documento' , '$Fecha', '$Respuesta', '$Estado',2)";
+    $sql = "INSERT INTO tbl_novedades (pkidNovedades, remNovedades, TipoNovedad, asuntoNovedades, descNovedades, docNovedades, fecNovedades, fkidTrabajador) VALUES (null, '$Remitente', '$tipoNovedad', '$Asunto', '$Descripcion', '$Documento' , '$Fecha',2)";
 
     if ($conn->query($sql) === TRUE) {
         echo "Evidencia registrada correctamente";
@@ -21,7 +20,7 @@ if (isset($_POST['Registrarnovedad'])){
     }
 }
 
-    header("location:../view/novedadesResidentes.php");
+    header("location:../view/novedades.php");
 $conn->close();
 
 
