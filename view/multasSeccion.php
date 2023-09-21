@@ -62,9 +62,9 @@ if (!isset($_SESSION['usuario'])) {
 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="usuriosCreacion.html">Crear Usuario</a></li>
-                                    <li><a class="dropdown-item" href="consultarUsu.html">Consultar Usuario</a></li>
-                                    <li><a class="dropdown-item" href="consultarInmueble.html">Consultar Inmueble</a></li>
+                                    <li><a class="dropdown-item" href="../view/usuriosCreacion.php">Crear Usuario</a></li>
+                                    <li><a class="dropdown-item" href="../view/consultarUsu.php">Consultar Usuario</a></li>
+                                    <li><a class="dropdown-item" href="../view/consultarInmueble.php">Consultar Inmueble</a></li>
 
 
                                 </ul>
@@ -75,10 +75,10 @@ if (!isset($_SESSION['usuario'])) {
 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="administracionDocumentacion.html">Documentación</a></li>
+                                    <li><a class="dropdown-item" href="../view/administracionDocumentacion.php">Documentación</a></li>
                                     <li><a class="dropdown-item" href="../view/multasSeccion.php">Multas</a></li>
-                                    <li><a class="dropdown-item" href="carteraSeccion.html">Cartera</a></li>
-                                    <li><a class="dropdown-item" href="visitantesSeccion.html">Vistantes</a></li>
+                                    <li><a class="dropdown-item" href="../view/carteraSeccion.php">Cartera</a></li>
+                                    <li><a class="dropdown-item" href="../view/visitantesSeccion.php">Vistantes</a></li>
                                     <li><a class="dropdown-item" href="../view/resumenDatos.php">Resumen de datos</a></li>
 
                                 </ul>
@@ -88,10 +88,10 @@ if (!isset($_SESSION['usuario'])) {
 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="solicitudesAlquiler.html">Solicitudes alquiler</a></li>
-                                    <li><a class="dropdown-item" href="cuposParqueadero.html">Cupos parqueadero</a></li>
-                                    <li><a class="dropdown-item" href="movimientoVehiculo.html">Entrada y Salida</a></li>
-                                    <li><a class="dropdown-item" href="configuracionAlquiler.html">Configuración</a></li>
+                                    <li><a class="dropdown-item" href="../view/solicitudesAlquiler.php">Solicitudes alquiler</a></li>
+                                    <li><a class="dropdown-item" href="../view/cuposParqueadero.php">Cupos parqueadero</a></li>
+                                    <li><a class="dropdown-item" href="..view/movimientoVehiculo.php">Entrada y Salida</a></li>
+                                    <li><a class="dropdown-item" href="../view/configuracionAlquiler.php">Configuración</a></li>
 
                                 </ul>
 
@@ -102,7 +102,7 @@ if (!isset($_SESSION['usuario'])) {
 
                                 <ul class="dropdown-menu">
 
-                                    <li><a class="dropdown-item" href="correspondencia.html">Correspondencia</a></li>
+                                    <li><a class="dropdown-item" href="../view/correspondencia.php">Correspondencia</a></li>
                                     <li><a class="dropdown-item" href="../view/novedadesResidentes.php">Novedades</a></li>
 
                                 </ul>
