@@ -103,7 +103,7 @@ if (!isset($_SESSION['usuario'])) {
                                 <ul class="dropdown-menu">
 
                                     <li><a class="dropdown-item" href="../view/correspondencia.php">Correspondencia</a></li>
-                                    <li><a class="dropdown-item" href="../view/novedadesResidentes.php">Novedades</a></li>
+                                    <li><a class="dropdown-item" href="../view/novedades.php">Novedades</a></li>
 
                                 </ul>
 
