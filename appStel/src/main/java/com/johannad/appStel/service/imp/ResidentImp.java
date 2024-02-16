@@ -40,6 +40,6 @@ public class ResidentImp implements ResidentService {
 
     @Override
     public void delete(Resident resident){
-        this.residentRepository.save(resident);
+        this.residentRepository.delete(resident);
     }
 }
