@@ -36,6 +36,6 @@ public class CorrespondenceImp implements CorrespondenceService {
     }
     @Override
     public  void delete(Correspondence correspondence) {
-        this.correspondenceRepository.save(correspondence);
+        this.correspondenceRepository.delete(correspondence);
     }
 }
