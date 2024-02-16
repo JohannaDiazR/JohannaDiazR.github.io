@@ -9,6 +9,8 @@ import java.util.List;
 @Entity
 @Table(name = "tblNovedades")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class News implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
