@@ -40,6 +40,6 @@ public class PropertyImp implements PropertyService {
 
     @Override
     public void delete(Property property){
-        this.propertyRepository.save(property);
+        this.propertyRepository.delete(property);
     }
 }
