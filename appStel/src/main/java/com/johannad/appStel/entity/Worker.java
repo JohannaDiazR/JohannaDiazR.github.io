@@ -11,6 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_trabajador")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class Worker  implements Serializable{
 
     @Id
