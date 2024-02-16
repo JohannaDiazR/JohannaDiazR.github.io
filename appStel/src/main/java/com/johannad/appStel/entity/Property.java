@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_Inmueble")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class Property implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
