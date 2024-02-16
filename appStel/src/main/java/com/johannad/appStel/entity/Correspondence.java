@@ -12,6 +12,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_correspondencia")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class Correspondence  implements Serializable{
 
     @Id
