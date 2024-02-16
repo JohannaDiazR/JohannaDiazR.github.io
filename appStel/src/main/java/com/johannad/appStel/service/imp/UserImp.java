@@ -40,6 +40,6 @@ public class UserImp implements UserService {
 
     @Override
     public void delete(User user){
-        this.userRepository.save(user);
+        this.userRepository.delete(user);
     }
 }
