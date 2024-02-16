@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "tblParqueadero")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class Parking implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
