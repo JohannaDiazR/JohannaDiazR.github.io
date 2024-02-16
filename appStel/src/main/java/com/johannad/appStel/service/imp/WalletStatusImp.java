@@ -35,7 +35,7 @@ public class WalletStatusImp implements WalletStatusService {
     }
     @Override
     public  void delete(WalletStatus walletStatus) {
-        this.walletStatusRepository.save(walletStatus);
+        this.walletStatusRepository.delete(walletStatus);
     }
 
 }
