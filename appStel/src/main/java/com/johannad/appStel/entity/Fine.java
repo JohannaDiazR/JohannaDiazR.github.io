@@ -11,7 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_multa")
 @Data
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Fine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
