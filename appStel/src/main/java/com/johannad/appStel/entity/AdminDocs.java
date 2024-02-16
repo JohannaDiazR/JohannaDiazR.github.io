@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "tblDocsadmin")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class AdminDocs implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
