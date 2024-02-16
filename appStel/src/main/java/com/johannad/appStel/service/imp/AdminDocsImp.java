@@ -40,7 +40,7 @@ public class AdminDocsImp implements AdminDocsService {
 
     @Override
     public void delete(AdminDocs admindocs){
-        this.adminDocsRepository.save(admindocs);
+        this.adminDocsRepository.delete(admindocs);
     }
 
 }
