@@ -36,6 +36,6 @@ public class NewsImp implements NewsService {
     }
     @Override
     public  void delete(News news) {
-        this.newsRepository.save(news);
+        this.newsRepository.delete(news);
     }
 }
