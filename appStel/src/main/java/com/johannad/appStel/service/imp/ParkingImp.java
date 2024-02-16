@@ -40,6 +40,6 @@ public class ParkingImp implements ParkingService {
 
     @Override
     public void delete(Parking parking){
-        this.parkingRepository.save(parking);
+        this.parkingRepository.delete(parking);
     }
 }
