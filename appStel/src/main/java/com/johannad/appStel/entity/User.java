@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_Usuarios")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class User implements Serializable {
 
     @Id
