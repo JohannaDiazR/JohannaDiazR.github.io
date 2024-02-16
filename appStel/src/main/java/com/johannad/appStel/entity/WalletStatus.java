@@ -11,6 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_estcartera")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class WalletStatus implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
