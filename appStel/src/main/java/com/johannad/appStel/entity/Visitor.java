@@ -11,6 +11,8 @@ import java.util.List;
 @Entity
 @Table(name = "tbl_visitantes")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor    
 public class Visitor implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
