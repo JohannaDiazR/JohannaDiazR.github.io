@@ -40,6 +40,6 @@ public class VisitorImp implements VisitorService {
 
     @Override
     public void delete(Visitor visitor){
-        this.visitorRepository.save(visitor);
+        this.visitorRepository.delete(visitor);
     }
 }
