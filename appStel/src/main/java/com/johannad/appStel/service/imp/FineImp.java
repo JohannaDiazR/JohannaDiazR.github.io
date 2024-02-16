@@ -35,6 +35,6 @@ public class FineImp implements FineService {
     }
     @Override
     public  void delete(Fine fine) {
-        this.fineRepository.save(fine);
+        this.fineRepository.delete(fine);
     }
 }
