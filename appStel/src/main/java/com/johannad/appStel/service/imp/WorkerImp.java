@@ -40,6 +40,6 @@ public class WorkerImp implements WorkerService {
 
     @Override
     public void delete(Worker worker){
-        this.workerRepository.save(worker);
+        this.workerRepository.delete(worker);
     }
 }
