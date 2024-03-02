@@ -1,7 +1,11 @@
 package com.johannad.appStel.entity;
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //import javax.persistence.*;
 import java.io.Serializable;
@@ -17,13 +21,14 @@ public class AdminDocs implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "classDocsadmin", length = 30)
+    @Column(name = "class_docsadmin", length = 30)
     private String classDocsAdmin;
 
-    @Column(name = "petiDocsadmin", length = 30)
+    @Column(name = "peti_docsadmin", length = 30)
     private String petiDocsAdmin;
-
+    @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "fkidTrabajador")
+    @JoinColumn(name = "fkid_trabajador")
     private Worker worker;
+
 }
