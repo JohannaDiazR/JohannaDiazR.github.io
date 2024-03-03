@@ -1,9 +1,11 @@
 package com.johannad.appStel.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-//import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -11,7 +13,7 @@ import java.util.List;
 @Table(name = "tbl_Usuarios")
 @Data
 @AllArgsConstructor
-@NoArgsConstructor    
+@NoArgsConstructor
 public class User implements Serializable {
 
     @Id
@@ -24,9 +26,8 @@ public class User implements Serializable {
     @Column(name = "contrasena", length = 15)
     private String contrasena; // Contraseña del usuario
 
-
+    @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "fkidRol")
+    @JoinColumn(name = "fkid_rol")
     private Role role;
 }
-
