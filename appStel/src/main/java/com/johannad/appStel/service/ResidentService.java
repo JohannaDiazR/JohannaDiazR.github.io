@@ -9,7 +9,7 @@ public interface ResidentService {
 
     public Resident findById(int id);
 
-    public void create(Resident resident);
+    public Resident create(Resident resident);
 
     public void update(Resident resident);
 
