@@ -29,8 +29,9 @@ public class ParkingImp implements ParkingService {
     }
 
     @Override
-    public void create(Parking parking){
+    public Parking create(Parking parking){
         this.parkingRepository.save(parking);
+        return parking;
     }
 
     @Override
