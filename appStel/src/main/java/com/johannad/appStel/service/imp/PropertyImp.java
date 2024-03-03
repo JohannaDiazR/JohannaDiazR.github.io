@@ -29,8 +29,9 @@ public class PropertyImp implements PropertyService {
     }
 
     @Override
-    public void create(Property property){
+    public Property create(Property property){
         this.propertyRepository.save(property);
+        return property;
     }
 
     @Override
