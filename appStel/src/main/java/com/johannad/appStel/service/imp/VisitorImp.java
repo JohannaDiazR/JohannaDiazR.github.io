@@ -29,8 +29,9 @@ public class VisitorImp implements VisitorService {
     }
 
     @Override
-    public void create(Visitor visitor){
+    public Visitor create(Visitor visitor){
         this.visitorRepository.save(visitor);
+        return visitor;
     }
 
     @Override
