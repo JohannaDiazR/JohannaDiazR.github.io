@@ -1,9 +1,12 @@
 package com.johannad.appStel.entity;
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-//import javax.persistence.*;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -12,7 +15,7 @@ import java.util.List;
 @Table(name = "tbl_trabajador")
 @Data
 @AllArgsConstructor
-@NoArgsConstructor    
+@NoArgsConstructor
 public class Worker  implements Serializable{
 
     @Id
@@ -23,7 +26,7 @@ public class Worker  implements Serializable{
     @Column(name = "ccTrabajador", nullable = false)
     int ccTrabajador;
     @Column(name = "celTrabajador", nullable = false)
-    int celTrabajador;
+    long celTrabajador;
     @Column(name = "emaTrabajador", length = 40)
     String emaTrabajador;
     @Column(name ="tpcoTrabajador", length = 40)
@@ -35,22 +38,30 @@ public class Worker  implements Serializable{
     @Column(name = "empTrabajador", length = 30)
     String empTrabajador; //Nombre de la empresa
 
+    @JsonBackReference
     @OneToMany (mappedBy = "worker")
     private List<Correspondence> correspondenceList;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "worker")
     private List<Visitor> visitorList;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "worker")
     private List<Fine> fineList;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "worker")
     private List<WalletStatus> walletStatusList;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "worker")
     private List<AdminDocs> adminDocsList;
 
+    @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "fkidRol")
+    @JoinColumn(name = "fkid_rol")
     private Role role;
+
+
 }
