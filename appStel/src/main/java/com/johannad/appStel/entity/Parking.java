@@ -1,7 +1,10 @@
 package com.johannad.appStel.entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //import javax.persistence.*;
 import java.io.Serializable;
@@ -11,36 +14,38 @@ import java.util.List;
 @Table(name = "tblParqueadero")
 @Data
 @AllArgsConstructor
-@NoArgsConstructor    
+@NoArgsConstructor
 public class Parking implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "tipoParqueadero", length = 30)
+    @Column(name = "tipo_parqueadero", length = 30)
     private String tipoParqueadero;
 
-    @Column(name = "estadoParqueadero", length = 30)
+    @Column(name = "estado_parqueadero", length = 30)
     private String estadoParqueadero;
 
-    @Column(name = "fecParqueadero")
+    @Column(name = "fec_parqueadero")
     private Date fecParqueadero;
 
-    @Column(name = "dvteParqueadero", length = 45)
+    @Column(name = "dvte_parqueadero", length = 45)
     private String dvteParqueadero;
 
-    @Column(name = "cupParqueadero", length = 11)
+    @Column(name = "cup_parqueadero", length = 11)
     private int cupParqueadero;
 
-    @Column(name = "horaSalida")
+    @Column(name = "hora_salida")
     private Date horaSalida;
 
-    @Column(name = "tarParqueadero", length = 11)
+    @Column(name = "tar_parqueadero", length = 11)
     private int tarParqueadero;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "parking")
     private List<Resident> residentList;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "parking")
     private List<Visitor> visitorList;
 
