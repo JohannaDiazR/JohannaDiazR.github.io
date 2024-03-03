@@ -13,34 +13,32 @@ public class AdminDocsImp implements AdminDocsService {
     @Autowired
     private AdminDocsRepository adminDocsRepository;
 
-    private List<AdminDocs> admindocsList;
+    private List<AdminDocs> adminDocsList;
 
     @Override
-    public List<AdminDocs> findAll()throws Exception{
-        this.admindocsList=this.adminDocsRepository.findAll();
-        return this.admindocsList;
-
-    }
+    public List<AdminDocs> findAll(){return this.adminDocsRepository.findAll();}
 
     @Override
     public AdminDocs findById(int id){
-        AdminDocs admindocs=this.adminDocsRepository.findById(id);
-        return admindocs;
+        AdminDocs adminDocs=this.adminDocsRepository.findById(id);
+        return adminDocs;
     }
 
     @Override
-    public void create(AdminDocs admindocs){
-        this.adminDocsRepository.save(admindocs);
+    public AdminDocs create(AdminDocs adminDocs){
+        this.adminDocsRepository.save(adminDocs);
+        return adminDocs;
     }
 
     @Override
-    public void update(AdminDocs admindocs){
-        this.adminDocsRepository.save(admindocs);
+    public void update(AdminDocs adminDocs){
+        this.adminDocsRepository.save(adminDocs);
     }
 
     @Override
-    public void delete(AdminDocs admindocs){
-        this.adminDocsRepository.delete(admindocs);
+    public void delete(AdminDocs adminDocs){
+        this.adminDocsRepository.delete(adminDocs);
     }
+
 
 }
