@@ -29,8 +29,9 @@ public class WorkerImp implements WorkerService {
     }
 
     @Override
-    public void create(Worker worker){
+    public Worker create(Worker worker){
         this.workerRepository.save(worker);
+        return worker;
     }
 
     @Override
