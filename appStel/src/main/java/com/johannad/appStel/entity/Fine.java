@@ -1,7 +1,10 @@
 package com.johannad.appStel.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //import javax.persistence.*;
 import java.io.Serializable;
@@ -17,28 +20,28 @@ public class Fine implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
     int id;
-    @Column(name = "ninmMulta", nullable = false)
-    int ninmMulta; //numero de inmueble
-    @Column(name = "tipoMulta", length = 30)
+    @Column(name = "tipo_multa", length = 30)
     String tipoMulta; //tipo multa razon de la multa
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "fecMulta")
+    @Column(name = "fec_multa")
     Date fecMulta; //Fecha en la que se pone la multa
-    @Column(name = "evidMulta", length = 35)
+    @Column(name = "evid_multa", length = 35)
     String evidMulta; //evidencia de la multa
-    @Column(name = "valMulta", nullable = false)
+    @Column(name = "val_multa", nullable = false)
     int valMulta; //Valor a pagar la multa
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "fpagMulta")
+    @Column(name = "fpag_multa")
     Date fpagMulta;
 
     //Foraneas
     //fkidInmueble
+    @JsonManagedReference
     @ManyToOne
-    @JoinColumn (name = "fkidInmueble")
+    @JoinColumn (name = "fkid_inmueble")
     private Property property;
     //fkidTrabajador
+    @JsonManagedReference
     @ManyToOne
-    @JoinColumn (name = "fkidTrabajador")
+    @JoinColumn (name = "fkid_trabajador")
     private Worker worker;
 }
