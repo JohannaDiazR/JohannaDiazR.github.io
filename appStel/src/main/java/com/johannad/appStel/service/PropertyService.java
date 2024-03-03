@@ -9,7 +9,7 @@ public interface PropertyService {
 
     public Property findById(int id);
 
-    public void create(Property property);
+    public Property create(Property property);
 
     public void update(Property property);
 
