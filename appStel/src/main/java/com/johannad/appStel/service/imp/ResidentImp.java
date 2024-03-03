@@ -29,8 +29,9 @@ public class ResidentImp implements ResidentService {
     }
 
     @Override
-    public void create(Resident resident){
+    public Resident create(Resident resident){
         this.residentRepository.save(resident);
+        return resident;
     }
 
     @Override
