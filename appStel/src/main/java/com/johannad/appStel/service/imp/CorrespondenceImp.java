@@ -17,18 +17,17 @@ public class CorrespondenceImp implements CorrespondenceService {
     private List<Correspondence> correspondenceList;
 
     @Override
-    public List<Correspondence> findAll()throws Exception {
-        this.correspondenceList=this.correspondenceRepository.findAll();
-        return this.correspondenceList;
-    }
+    public List<Correspondence> findAll(){return this.correspondenceRepository.findAll();}
+
     @Override
     public Correspondence findById(int id) {
         Correspondence correspondence=this.correspondenceRepository.findById(id);
         return correspondence;
     }
     @Override
-    public void create(Correspondence correspondence) {
+    public Correspondence create(Correspondence correspondence) {
         this.correspondenceRepository.save(correspondence);
+        return correspondence;
     }
     @Override
     public void update(Correspondence correspondence){
