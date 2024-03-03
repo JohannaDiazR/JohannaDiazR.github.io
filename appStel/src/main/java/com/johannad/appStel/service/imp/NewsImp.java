@@ -27,8 +27,9 @@ public class NewsImp implements NewsService {
         return news;
     }
     @Override
-    public void create(News news) {
+    public News create(News news) {
         this.newsRepository.save(news);
+        return news;
     }
     @Override
     public void update(News news){
