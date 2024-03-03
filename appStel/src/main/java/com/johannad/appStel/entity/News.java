@@ -1,6 +1,9 @@
 package com.johannad.appStel.entity;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //import javax.persistence.*;
 import java.io.Serializable;
@@ -16,35 +19,36 @@ public class News implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "remNovedades", length = 30)
+    @Column(name = "rem_novedades", length = 30)
     private String remNovedades;
 
-    @Column(name = "tipoNovedad", length = 45)
+    @Column(name = "tipo_novedad", length = 45)
     private String tipoNovedad;
 
-    @Column(name = "asuntoNovedades", length = 65)
+    @Column(name = "asunto_novedades", length = 65)
     private String asuntoNovedades;
 
-    @Column(name = "descNovedades", length = 65)
+    @Column(name = "desc_novedades", length = 65)
     private String descNovedades;
 
-    @Column(name = "docNovedades", length = 35)
+    @Column(name = "doc_novedades", length = 35)
     private String docNovedades;
 
-    @Column(name = "fecNovedades")
+    @Column(name = "fec_novedades")
     private Date fecNovedades;
 
-    @Column(name = "resNovedades", length = 30)
+    @Column(name = "res_novedades", length = 30)
     private String resNovedades;
 
-    @Column(name = "estNovedades", length = 25)
+    @Column(name = "est_novedades", length = 25)
     private String estNovedades;
 
+    @JsonManagedReference
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "New_has_Role",
-            joinColumns = @JoinColumn(name = "fkidNovedades", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "fkidRol", nullable = false)
+            joinColumns = @JoinColumn(name = "fkid_novedades", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "fkid_rol", nullable = false)
     )
     private List<Role> roleList;
 
