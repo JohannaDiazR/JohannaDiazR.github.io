@@ -26,8 +26,9 @@ public class WalletStatusImp implements WalletStatusService {
         return walletStatus;
     }
     @Override
-    public void create(WalletStatus walletStatus) {
+    public WalletStatus create(WalletStatus walletStatus) {
         this.walletStatusRepository.save(walletStatus);
+        return walletStatus;
     }
     @Override
     public void update(WalletStatus walletStatus){
