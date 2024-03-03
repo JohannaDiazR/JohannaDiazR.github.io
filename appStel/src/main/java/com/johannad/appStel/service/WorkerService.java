@@ -9,7 +9,7 @@ public interface WorkerService {
 
     public Worker findById(int id);
 
-    public void create(Worker worker);
+    public Worker create(Worker worker);
 
     public void update(Worker worker);
 
