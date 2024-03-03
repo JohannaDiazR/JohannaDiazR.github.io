@@ -26,8 +26,9 @@ public class FineImp implements FineService {
         return fine;
     }
     @Override
-    public void create(Fine fine) {
+    public Fine create(Fine fine) {
         this.fineRepository.save(fine);
+        return fine;
     }
     @Override
     public void update(Fine fine){
