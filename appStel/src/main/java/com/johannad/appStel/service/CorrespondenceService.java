@@ -8,7 +8,7 @@ public interface CorrespondenceService {
 
     public List<Correspondence> findAll() throws Exception;
     public Correspondence findById(int id);
-    public void create(Correspondence correspondence);
+    public Correspondence create(Correspondence correspondence);
     public void update(Correspondence correspondence);
     public void delete(Correspondence correspondence);
 }
