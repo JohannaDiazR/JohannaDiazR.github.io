@@ -9,7 +9,7 @@ public interface AdminDocsService {
 
     public AdminDocs findById(int id);
 
-    public void create(AdminDocs admindocs);
+    public AdminDocs create(AdminDocs admindocs);
 
     public void update(AdminDocs admindocs);
 
