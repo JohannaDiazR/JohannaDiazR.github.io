@@ -9,9 +9,10 @@ public interface VisitorService {
 
     public Visitor findById(int id);
 
-    public void create(Visitor visitor);
+    public Visitor create(Visitor visitor);
 
     public void update(Visitor visitor);
 
     public void delete(Visitor visitor);
+
 }
