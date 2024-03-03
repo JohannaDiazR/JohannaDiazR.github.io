@@ -8,7 +8,7 @@ public interface RoleService {
 
     public List<Role> findAll() throws Exception;
     public Role findById(int id);
-    public void create(Role role);
+    public Role create(Role role);
     public void update(Role role);
     public void delete(Role role);
 }
