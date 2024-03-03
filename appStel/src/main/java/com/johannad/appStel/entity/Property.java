@@ -1,7 +1,11 @@
 package com.johannad.appStel.entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //import javax.persistence.*;
 import java.io.Serializable;
@@ -11,29 +15,41 @@ import java.util.List;
 @Table(name = "tbl_Inmueble")
 @Data
 @AllArgsConstructor
-@NoArgsConstructor    
+@NoArgsConstructor
 public class Property implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "andInmueble", length = 11)//anden donde se ubica el inmueble
+    @Column(name = "and_inmueble")//anden donde se ubica el inmueble
     private int andInmueble;
 
-    @Column(name = "numInmueble", length = 11)//numero del inmueble
+    @Column(name = "num_inmueble")//numero del inmueble
     private int numInmueble;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "property")
     private  List<Fine> fineList;
 
+    @JsonBackReference
     @OneToMany (mappedBy = "property")
     private List<WalletStatus> walletStatusList;
 
+    @JsonBackReference
+    @OneToMany (mappedBy = "property")
+    private List<Visitor> visitorList;
+
+    @JsonManagedReference
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "Property_Correspondence",
-            joinColumns = @JoinColumn(name = "fkidInmueble", nullable = false),
-            inverseJoinColumns = @JoinColumn(name = "fkidCorrespondencia", nullable = false)
+            joinColumns = @JoinColumn(name = "fkid_inmueble", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "fkid_correspondencia", nullable = false)
     )
     private List<Correspondence> correspondence;
+
+    @JsonManagedReference
+    @ManyToOne
+    @JoinColumn(name = "fkid_residente")
+    private Resident resident;
 }
