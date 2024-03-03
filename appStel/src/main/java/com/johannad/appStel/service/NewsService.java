@@ -8,7 +8,7 @@ import java.util.List;
 public interface NewsService {
     public List<News> findAll() throws Exception;
     public News findById(int id);
-    public void create(News news);
+    public News create(News news);
     public void update(News news);
     public void delete(News news);
 }
