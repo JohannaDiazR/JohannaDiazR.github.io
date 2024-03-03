@@ -9,7 +9,7 @@ public interface ParkingService {
 
     public Parking findById(int id);
 
-    public void create(Parking parking);
+    public Parking create(Parking parking);
 
     public void update(Parking parking);
 
