@@ -29,8 +29,9 @@ public class UserImp implements UserService {
     }
 
     @Override
-    public void create(User user){
+    public User create(User user){
         this.userRepository.save(user);
+        return user;
     }
 
     @Override
